@@ -18,6 +18,22 @@ class RolSeeder extends Seeder
         DB::table('roles')->insert([
             'nom_rol' => Str::random(8),
             'descri_rol' => Str::random(8)
+            'created_at' => now()
+        ]);
+        DB::table('roles')->insert([
+            'nom_rol' => Str::random(8),
+            'descri_rol' => Str::random(8)
+            'created_at' => now()
+        ]);
+        DB::table('roles')->insert([
+            'nom_rol' => Str::random(8),
+            'descri_rol' => Str::random(8)
+            'created_at' => now()
+        ]);
+        DB::table('roles')->insert([
+            'nom_rol' => Str::random(8),
+            'descri_rol' => Str::random(8)
+            'created_at' => now()
         ]);
     }
 }
