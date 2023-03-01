@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\usuario;
+use App\Models\rol;
 use Illuminate\Http\Request;
+
 
 class UsuarioController extends Controller
 {
@@ -12,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        return view('Usuarios.index');
     }
 
     /**
@@ -20,7 +22,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('Usuarios.createusu',['roles'=> rol::all()]);
     }
 
     /**
@@ -28,7 +30,12 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $request->validate([
+                'nom_comple' => 'required|max:255',
+                'clave' => 'required|unique:usuario|max:10',
+                'password' => 'required',
+                'rol_id' => 'required'
+            ]);
     }
 
     /**

@@ -21,4 +21,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/rol','RolController::class');
-Route::resource('/Usuario','UsuarioController::class');
+Route::resource('/Usuario',UsuarioController::class);
