@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\usuario;
 use App\Models\rol;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 
 class UsuarioController extends Controller
@@ -31,8 +32,8 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
             $request->validate([
-                'nom_comple' => 'required|max:255',
-                'clave' => 'required|unique:usuario|max:10',
+                'nom_comple' => 'required',
+                'clave' => 'required',
                 'password' => 'required',
                 'rol_id' => 'required'
             ]);

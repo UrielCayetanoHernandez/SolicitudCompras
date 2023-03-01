@@ -27,25 +27,25 @@
         <div class="mb-3 row">
             <label for="nom_comple" class="col-sm-2 col-form-label">Nombre Completo</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" name="nom_completo" id="nom_comple" value="{{old ('nom_comple')}}" >
+                <input type="text" class="form-control" name="nom_comple" id="nom_comple" value="{{old ('nom_comple')}}" >
             </div>
         </div>
         <div class="mb-3 row">
             <label for="clave" class="col-sm-2 col-form-label">Clave de Acceso</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" name="clave" id="clave" value="{{old ('clave')}}" required>
+                <input type="text" class="form-control" name="clave" id="clave" value="{{old ('clave')}}" >
             </div>
         </div>
         <div class="mb-3 row">
             <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" name="password" id="password" value="{{old ('password')}}" required>
+                <input type="text" class="form-control" name="password" id="password" value="{{old ('password')}}" >
             </div>
         </div>
         <div class="mb-3 row">
             <label for="rol_id" class="col-sm-2 col-form-label">Rol</label>
             <div class="col-sm-5">
-               <select name="rol_id" id="rol_id" class="form-select" required>
+               <select name="rol_id" id="rol_id" class="form-select" >
                     <option value="">Selecionar Rol</option>
                     @foreach ($roles as $rol)
                     <option value="{{$rol->id}}">{{$rol->nom_rol}}</option>
@@ -55,7 +55,7 @@
             </div>
         </div>
         <a href="{{url('Usuario')}}" class="btn btn-secondary">Regresar</a>
-        <button type="submit" class="btn btn-success">Guarda</button>
+        <button type="submit" class="btn btn-success">Guardar</button>
 
         </form>
 

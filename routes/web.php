@@ -20,5 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/rol','RolController::class');
+
+
+Route::resource('/rol',RolController::class);
 Route::resource('/Usuario',UsuarioController::class);
