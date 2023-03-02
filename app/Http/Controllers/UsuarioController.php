@@ -6,6 +6,7 @@ use App\Models\usuario;
 use App\Models\rol;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
+use Illuminate\Validation\ValidationException;
 
 
 class UsuarioController extends Controller
@@ -15,7 +16,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view('Usuarios.index');
+        $usuar = usuario::all();
+
+        return view('Usuarios.index',['usuar' => $usuar]);
     }
 
     /**
@@ -37,6 +40,15 @@ class UsuarioController extends Controller
                 'password' => 'required',
                 'rol_id' => 'required'
             ]);
+
+            $usuario = new usuario();
+            $usuario ->nom_comple = $request->input('nom_comple');
+            $usuario ->clave = $request->input('clave');
+            $usuario ->password = $request->input('password');
+            $usuario ->rol_id = $request->input('rol_id');
+            $usuario->save();
+
+            return view("Usuarios.massage",['msg'=> "Registro Guardado"]);
     }
 
     /**

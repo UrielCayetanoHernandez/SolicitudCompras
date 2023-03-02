@@ -13,6 +13,33 @@
 
         <a href="{{url('Usuario/create')}}" class="btn btn-primary btn-sm">Nuevo Usuario</a>
 
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre Completo</th>
+                    <th>Clave</th>
+                    <th>Password</th>
+                    <th>Rol</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($usuar as $usu)
+                <tr>
+                    <td>{{$usu->id}}</td>
+                    <td>{{$usu->nom_comple}}</td>
+                    <td>{{$usu->clave}}</td>
+                    <td>{{$usu->password}}</td>
+                    <td>{{$usu->roles->nom_rol}}</td>
+                </tr>
+
+                @endforeach
+            </tbody>
+
+        </table>
+
     </div>
 
 
