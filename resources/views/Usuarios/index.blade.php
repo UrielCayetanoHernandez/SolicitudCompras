@@ -32,7 +32,7 @@
                     <td>{{$usu->nom_comple}}</td>
                     <td>{{$usu->clave}}</td>
                     <td>{{$usu->password}}</td>
-                    <td>{{$usu->roles->nom_rol}}</td>
+
                 </tr>
 
                 @endforeach
