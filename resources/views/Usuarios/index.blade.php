@@ -31,7 +31,7 @@
                     <td>{{$usu->id}}</td>
                     <td>{{$usu->nom_comple}}</td>
                     <td>{{$usu->clave}}</td>
-                    <td>{{$usu->password}}</td>
+
 
                 </tr>
 
