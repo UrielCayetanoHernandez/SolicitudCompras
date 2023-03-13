@@ -21,14 +21,18 @@
                     <th>Clave</th>
                     <th>Password</th>
                     <th>Rol</th>
-                    <th></th>
-                    <th></th>
+                    <th>Moficar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($usuar as $usu)
                 <tr>
-
+                    <td>{{$usu->id}}</td>
+                    <td>{{$usu->nom_comple}}</td>
+                    <td>{{$usu->clave}}</td>
+                    <td>{{$usu->password}}</td>
+                    <td>{{$usu->role->nom_rol}}</td>
 
                 </tr>
 

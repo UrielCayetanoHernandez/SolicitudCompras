@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\rol;
+use App\Models\usuario;
 use Illuminate\Http\Request;
 
 class RolController extends Controller

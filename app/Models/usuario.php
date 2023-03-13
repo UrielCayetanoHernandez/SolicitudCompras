@@ -9,8 +9,11 @@ class usuario extends Model
 {
     use HasFactory;
 
+    protected $table = 'usuarios';
+
+
     public function role()
     {
-        return  $this->belongsTo(rol::class, 'id_rol','id_roles');
+        return  $this->belongsTo(rol::class, 'rol_id');
     }
 }
