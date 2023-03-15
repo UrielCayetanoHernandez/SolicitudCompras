@@ -62,24 +62,42 @@ class UsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(usuario $usuario)
+    public function edit($id)
     {
-        //
+            $usuarios=usuario::find($id);
+            return view('Usuarios.editarusu',['usuarios'=> $usuarios, 'roles'=>rol::all()]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, usuario $usuario)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nom_comple' => 'required',
+            'clave' => 'required',
+            'password' => 'required',
+            'rol_id' => 'required'
+        ]);
+
+        $usuario = usuario::find($id);
+        $usuario ->nom_comple = $request->input('nom_comple');
+        $usuario ->clave = $request->input('clave');
+        $usuario ->password = $request->input('password');
+        $usuario ->rol_id = $request->input('rol_id');
+        $usuario->save();
+
+        return view("Usuarios.massage",['msg'=> "Registro Modificado"]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(usuario $usuario)
+    public function destroy($id)
     {
-        //
+            $usuarios=usuario::find($id);
+            $usuarios->delete();
+
+            return redirect('Usuario');
     }
 }

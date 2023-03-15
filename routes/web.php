@@ -22,5 +22,10 @@ Route::get('/', function () {
 
 
 
-Route::resource('/rol',RolController::class);
+Route::resource('/Rol',RolController::class);
 Route::resource('/Usuario',UsuarioController::class);
+
+Route::resource('/Categoria1',RolController::class);
+Route::resource('/Categoria2',RolController::class);
+Route::resource('/Producto',UsuarioController::class);
+

@@ -13,7 +13,9 @@ class RolController extends Controller
      */
     public function index()
     {
-        //
+        $roles = rol::all();
+
+        return view('Roles.index',['roles' => $roles]);
     }
 
     /**
@@ -21,7 +23,7 @@ class RolController extends Controller
      */
     public function create()
     {
-        //
+        return view('Roles.createrol');
     }
 
     /**
@@ -29,7 +31,17 @@ class RolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom_rol' => 'required',
+            'descri_rol' => 'required'
+        ]);
+
+        $Roll = new rol();
+        $Roll ->nom_rol = $request->input('nom_rol');
+        $Roll ->descri_rol = $request->input('descri_rol');
+        $Roll->save();
+
+        return view("Roles.massage",['msg'=> "Registro Guardado"]);
     }
 
     /**
@@ -43,24 +55,38 @@ class RolController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(rol $rol)
+    public function edit($id)
     {
-        //
+        $roles=rol::find($id);
+        return view('Roles.editarrol',['roles'=> $roles]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, rol $rol)
+    public function update(Request $request,$id)
     {
-        //
+        $request->validate([
+            'nom_rol' => 'required',
+            'descri_rol' => 'required'
+        ]);
+
+        $roles = rol::find($id);
+        $roles ->nom_rol = $request->input('nom_rol');
+        $roles ->descri_rol = $request->input('descri_rol');
+        $roles->save();
+
+        return view("Roles.massage",['msg'=> "Registro Modificado"]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(rol $rol)
+    public function destroy($id)
     {
-        //
+        $roles=rol::find($id);
+        $roles->delete();
+
+        return redirect('Rol');
     }
 }

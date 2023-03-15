@@ -33,6 +33,12 @@
                     <td>{{$usu->clave}}</td>
                     <td>{{$usu->password}}</td>
                     <td>{{$usu->role->nom_rol}}</td>
+                    <td><a href="{{ url('Usuario/'.$usu->id.'/edit')}}" class="btn btn-warning btn-sm">Editar</a></td>
+                    <td><form action="{{url('Usuario/'.$usu->id)}}" method="post">
+                        @method("DELETE")
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form> </td>
 
                 </tr>
 
