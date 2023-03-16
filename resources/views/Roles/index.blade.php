@@ -34,7 +34,7 @@
                     <td><form action="{{url('Rol/'.$role->id)}}" method="post">
                         @method("DELETE")
                         @csrf
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+
                     </form> </td>
 
                 </tr>
