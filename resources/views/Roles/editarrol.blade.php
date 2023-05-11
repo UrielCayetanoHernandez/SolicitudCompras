@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="descri_rol" class="col-sm-2 col-form-label">Clave de Acceso</label>
+            <label for="descri_rol" class="col-sm-2 col-form-label">Descripcion Rol</label>
             <div class="col-sm-5">
                 <input type="text" class="form-control" name="descri_rol" id="descri_rol" value="{{$roles->descri_rol}}" >
             </div>

@@ -12,6 +12,7 @@
         <h2>Listado de Roles</h2>
 
         <a href="{{url('Rol/create')}}" class="btn btn-primary btn-sm">Nuevo Rol</a>
+        <a href="{{url('Usuario/create')}}" class="btn btn-primary btn-sm">Nuevo Usuario</a>
 
         <table class="table table-hover">
             <thead>
@@ -34,7 +35,7 @@
                     <td><form action="{{url('Rol/'.$role->id)}}" method="post">
                         @method("DELETE")
                         @csrf
-
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                     </form> </td>
 
                 </tr>

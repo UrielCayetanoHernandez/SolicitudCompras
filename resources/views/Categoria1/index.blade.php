@@ -9,33 +9,30 @@
 
 <main>
     <div class="container py-4">
-        <h2>Listado de Usuarios</h2>
+        <h2>Listado de Categoria 1</h2>
 
-        <a href="{{url('Usuario/create')}}" class="btn btn-primary btn-sm">Nuevo Usuario</a>
         <a href="{{url('Rol/create')}}" class="btn btn-primary btn-sm">Nuevo Rol</a>
+        <a href="{{url('Usuario/create')}}" class="btn btn-primary btn-sm">Nuevo Usuario</a>
+        <a href="{{url('Categoria1/create')}}" class="btn btn-primary btn-sm">Nueva Categira 1</a>
 
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nombre Completo</th>
-                    <th>Clave</th>
-                    <th>Password</th>
-                    <th>Rol</th>
+                    <th>Categoria</th>
                     <th>Moficar</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($usuar as $usu)
+                @foreach ($categori1 as $categori1ss)
                 <tr>
-                    <td>{{$usu->id}}</td>
-                    <td>{{$usu->nom_comple}}</td>
-                    <td>{{$usu->clave}}</td>
-                    <td>{{$usu->password}}</td>
-                    <td>{{$usu->role->nom_rol}}</td>
-                    <td><a href="{{ url('Usuario/'.$usu->id.'/edit')}}" class="btn btn-warning btn-sm">Editar</a></td>
-                    <td><form action="{{url('Usuario/'.$usu->id)}}" method="post">
+                    <td>{{$categori1ss->id}}</td>
+                    <td>{{$categori1ss->nom_cat1}}</td>
+
+                    <td><a href="{{ url('Categoria1/'.$categori1ss->id.'/edit')}}" class="btn btn-warning btn-sm">Editar</a></td>
+
+                    <td><form action="{{url('Categoria1/'.$categori1ss->id)}}" method="post">
                         @method("DELETE")
                         @csrf
                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
