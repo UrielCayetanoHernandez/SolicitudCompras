@@ -12,7 +12,9 @@ class Categoria2Controller extends Controller
      */
     public function index()
     {
-        //
+        $categori2 = categoria2::all();
+
+        return view('Categoria2.index',['categori2' => $categori2]);
     }
 
     /**
@@ -20,7 +22,7 @@ class Categoria2Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('Categoria2.createCat2');
     }
 
     /**
@@ -28,7 +30,15 @@ class Categoria2Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom_cat2' => 'required'
+        ]);
+
+        $categori2 = new categoria2();
+        $categori2 ->nom_cat2= $request->input('nom_cat2');
+        $categori2->save();
+
+        return view("Categoria2.massage",['msg'=> "Registro Guardado"]);
     }
 
     /**
