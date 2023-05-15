@@ -32,9 +32,9 @@
                     <td>{{$categoria2s->id}}</td>
                     <td>{{$categoria2s->nom_cat2}}</td>
 
-                    <td><a href="" class="btn btn-warning btn-sm">Editar</a></td>
+                    <td><a href="{{ url('Categoria2/'.$categoria2s->id.'/edit')}}" class="btn btn-warning btn-sm">Editar</a></td>
 
-                    <td><form action="" method="post">
+                    <td><form action="{{url('Categoria2/'.$categoria2s->id)}}" method="post">
                         @method("DELETE")
                         @csrf
                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

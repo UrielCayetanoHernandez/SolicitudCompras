@@ -52,24 +52,37 @@ class Categoria2Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(categoria2 $categoria2)
+    public function edit($id)
     {
-        //
+        $categori2 = categoria2::find($id);
+        return view('Categoria2.editarcat2',['categori2'=>$categori2]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, categoria2 $categoria2)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nom_cat2' => 'required'
+        ]);
+
+        $categori2 = categoria2::find($id);
+        $categori2 -> nom_cat2 = $request->input('nom_cat2');
+        $categori2->save();
+
+        return view("Categoria2.massage",['msg'=> "Registro Modificado Correctamente"]);
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(categoria2 $categoria2)
+    public function destroy($id)
     {
-        //
+        $categori2 = categoria2::find($id);
+        $categori2->delete();
+
+        return redirect('Categoria2');
     }
 }

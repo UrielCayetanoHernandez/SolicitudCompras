@@ -8,7 +8,7 @@
 
 <main>
     <div class="container py-4">
-        <h2>Editar Categoria 1</h2>
+        <h2>Editar Categoria 2</h2>
 
      @if ($errors->any())
 
@@ -21,13 +21,13 @@
     </div>
         @endif
 
-        <form action="{{url('Categoria1/'.$categori1s->id)}}" method="post">
+        <form action="{{url('Categoria2/'.$categori2->id)}}" method="post">
             @method("PUT")
         @csrf
         <div class="mb-3 row">
-            <label for="nom_cat1" class="col-sm-2 col-form-label">Nombre Categoria</label>
+            <label for="nom_cat2" class="col-sm-2 col-form-label">Nombre Categoria</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" name="nom_cat1" id="nom_cat1" value="{{$categori1s->nom_cat1}}" >
+                <input type="text" class="form-control" name="nom_cat2" id="nom_cat2" value="{{$categori2->nom_cat2}}" >
             </div>
         </div>
         <a href="{{url('Categoria1')}}" class="btn btn-secondary">Regresar</a>
