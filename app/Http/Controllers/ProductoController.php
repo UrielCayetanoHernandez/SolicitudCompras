@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\producto;
+use App\Models\categoria1;
+use App\Models\categoria2;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
+use Illuminate\Validation\ValidationException;
+
 
 class ProductoController extends Controller
 {
@@ -12,7 +17,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $produc = producto::all();
+
+        return view('Producto.index',['produc'=>$produc]);
     }
 
     /**
@@ -20,7 +27,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Producto.createproduc',['categ1'=>categoria1::all()]);
     }
 
     /**

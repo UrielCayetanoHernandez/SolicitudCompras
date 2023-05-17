@@ -10,12 +10,12 @@ class producto extends Model
     protected $table = 'productos';
 
 
-    public function categori1()
+    public function catego1()
     {
         return  $this->belongsTo(categoria1::class, 'cate_id1');
     }
 
-    public function categori2()
+    public function catego2()
     {
         return  $this->belongsTo(categoria2::class, 'cate_id2');
     }
