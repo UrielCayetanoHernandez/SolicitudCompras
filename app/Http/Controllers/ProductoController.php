@@ -27,7 +27,11 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('Producto.createproduc',['categ1'=>categoria1::all()]);
+        return view('Producto.createproduc',
+                    ['categ1'=>categoria1::all()],
+                    ['categ2'=>categoria2::all()])
+
+        ;
     }
 
     /**
@@ -35,7 +39,23 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'producto' => 'required'
+             ]);
+
+            $product = new producto();
+            $product ->clave = $request->input('clave');
+            $product->producto= $request->input('producto');
+            $product->Unidad= $request->input('Unidad');
+            $product->precioUni= $request->input('precioUni');
+            $product->tipoimpu= $request->input('tipoimpu');
+            $product->impuesto= $request->input('impuesto');
+            $product->entregar= $request->input('entregar');
+            $product->cate_id1= $request->input('cate_id1');
+            $product->cate_id2= $request->input('cate_id2');
+            $product->save();
+
+            return view("Producto.massage",['msg'=> "Registro Guardado"]);
     }
 
     /**

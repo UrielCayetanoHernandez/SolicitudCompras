@@ -12,7 +12,7 @@
             {{$msg}}
         </h2>
 
-        <a href="{{url('Categoria2')}}" class="btn btn-secondary">Regresar</a>
+        <a href="{{url('Producto')}}" class="btn btn-secondary">Regresar</a>
 
     </div>
 
