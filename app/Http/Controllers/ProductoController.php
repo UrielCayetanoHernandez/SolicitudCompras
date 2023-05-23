@@ -69,9 +69,10 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(producto $producto)
+    public function edit($id)
     {
-        //
+        $pro = producto::find($id);
+        return view('Producto.editarproduc',['pro'=> $pro]);
     }
 
     /**

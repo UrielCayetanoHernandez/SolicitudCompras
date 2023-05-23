@@ -30,7 +30,7 @@
                 <input type="text" class="form-control" name="nom_cat2" id="nom_cat2" value="{{$categori2->nom_cat2}}" >
             </div>
         </div>
-        <a href="{{url('Categoria1')}}" class="btn btn-secondary">Regresar</a>
+        <a href="{{url('Categoria2')}}" class="btn btn-secondary">Regresar</a>
         <button type="submit" class="btn btn-success">Guardar</button>
 
         </form>

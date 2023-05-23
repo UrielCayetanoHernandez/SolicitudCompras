@@ -44,7 +44,7 @@
                     <td>{{$producs->catego2->nom_cat2}}</td>
 
 
-                    <td><a href="" class="btn btn-warning btn-sm">Editar</a></td>
+                    <td><a href="{{ url('Producto/'.$producs->id.'/edit')}}" class="btn btn-warning btn-sm">Editar</a></td>
 
                     <td><form action="" method="post">
                         @method("DELETE")
